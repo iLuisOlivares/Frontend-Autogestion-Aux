@@ -5,6 +5,8 @@ import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 
+const textfields = [  "Nombre", "Telefono", "Email", "Direccion" ]
+
 export default function IdentificacionForm() {
   return (
     <React.Fragment>
@@ -12,43 +14,18 @@ export default function IdentificacionForm() {
         Formulario de identificacion
       </Typography>
       <Grid container spacing={3}>
-        <Grid item xs={12} md={6}>
+        {
+          textfields.map((item)=>
+          <Grid item xs={12} md={6}>
           <TextField
             required
-            id="nombre"
-            label="Nombre"
+            id={item}
+            label={item}
             fullWidth
-            variant="standard"
+            variant="outlined"
           />
-          
-        </Grid>
-        <Grid item xs={12} md={6}>
-          <TextField
-            required
-            id="telefono"
-            label="Telefono"
-            fullWidth
-            variant="standard"
-          />
-        </Grid>
-        <Grid item xs={12} md={6}>
-          <TextField
-            required
-            id="email"
-            label="Email"
-            fullWidth
-            variant="standard"
-          />
-        </Grid>
-        <Grid item xs={12} md={6}>
-          <TextField
-            required
-            id="direccion"
-            label="Direccion"
-            fullWidth
-            variant="standard"
-          />
-        </Grid>
+        </Grid> )
+        }
         <Grid item xs={12}>
           <FormControlLabel
             control={<Checkbox color="secondary" name="saveCard" value="yes" />}
