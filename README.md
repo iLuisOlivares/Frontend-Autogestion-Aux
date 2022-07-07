@@ -2,6 +2,18 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Docker
+
+### Crear imágen
+
+    docker build -t autogestion-usuario-frontend:dev .
+
+### Correr ambiente docker
+
+    docker run -it --rm -v ${PWD}:/app -v /app/node_modules -p 3001:3000 -e CHOKIDAR_USEPOLLING=true autogestion-usuario-frontend:dev
+
+Luego la aplicación estará disponible en dirección local <http://localhost:3001>
+
 ## Available Scripts
 
 In the project directory, you can run:
