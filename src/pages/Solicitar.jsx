@@ -1,10 +1,41 @@
 import * as React from 'react';
+import "../App.css";
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
+import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
 import { Button } from '@mui/material';
 import { DisponibilidadCard } from '../components/DisponibilidadCard';
+
+const cartas = [
+  {
+    dia:'Jueves, 19 de mayo' ,
+    inicio:'07:00 am', 
+    fin: '11:00 am',
+    precio:'62,700',
+
+  },
+  {
+    dia:'Jueves, 19 de mayo' ,
+    inicio:'07:00 am', 
+    fin: '11:00 am',
+    precio:'62,700',
+
+  },
+  {
+    dia:'Jueves, 19 de mayo' ,
+    inicio:'07:00 am', 
+    fin: '11:00 am',
+    precio:'62,700',
+  },
+  {  
+  dia:'Jueves, 19 de mayo' ,
+  inicio:'07:00 am', 
+  fin: '11:00 am',
+  precio:'62,700',
+  }
+]
 
 const marks = [
   {
@@ -83,13 +114,18 @@ export default function Solicitar() {
         <Typography variant="body1" gutterBottom>
         Disponibilidad sugerida:
         </Typography>
-        <Grid container  justifyContent="center" alignItems="center"  spacing={3}>
-       
-        <DisponibilidadCard dia={'Jueves, 19 de mayo'} inicio={'7:00 am'} fin={'11:00 am'} precio={'62,700'}/>
-        <DisponibilidadCard  dia={'Jueves, 19 de mayo'}  inicio={'2:00 am'} fin={'6:00 am'} precio={'62,700'}/>
-        <DisponibilidadCard  dia={'Jueves, 20 de mayo'} inicio={'2:00 am'} fin={'6:00 am'} precio={'62,700'}/>  
 
-        </Grid>
+        <div className="wrapper">
+        {
+            cartas.map(({dia,inicio,fin,precio})=>(
+          <Box sx={{ m:2,  minWidth: '200' }} >
+          <DisponibilidadCard  dia={dia} isnicio={inicio} fin={fin} precio={precio}/>
+          </Box>
+
+            ))
+          }
+
+        </div>
       
         </Grid>
 

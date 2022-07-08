@@ -7,7 +7,6 @@ import Button from '@mui/material/Button';
 
 export const DisponibilidadCard = ({dia,inicio,fin,precio}) => {
   return (
-    <Grid   item xs={6} sm={4}>
       <Paper elevation={3}>
         <Box alignItems="center"
         justifyContent="center"  padding={2}>
@@ -32,6 +31,5 @@ export const DisponibilidadCard = ({dia,inicio,fin,precio}) => {
         </Box>
 
         </Paper> 
-    </Grid>
   )
 }
