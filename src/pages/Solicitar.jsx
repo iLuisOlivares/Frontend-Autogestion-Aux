@@ -7,6 +7,10 @@ import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
 import { Button } from '@mui/material';
 import { DisponibilidadCard } from '../components/DisponibilidadCard';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import { Ciudadeselect } from '../components/Ciudadeselect';
 
 const cartas = [
   {
@@ -36,6 +40,7 @@ const cartas = [
   precio:'62,700',
   }
 ]
+
 
 const marks = [
   {
@@ -73,6 +78,7 @@ function valuetext(value) {
   return `${value}`;
 }
 export default function Solicitar() {
+  const [ciudad, setCiudad] = React.useState('');
   
   return (
     <React.Fragment>
@@ -80,21 +86,11 @@ export default function Solicitar() {
         Solicitar servicio
       </Typography>
       <Grid container spacing={3}>
-        <Grid item xs={12} sm={12}>
-        <Typography variant="body1" gutterBottom>
-        Ciudad donde se realizará el servicio:
-      </Typography>
-          <TextField
-            required
-            id="firstName"
-            name="firstName"
-            variant="outlined"
-            label="Ciudad donde se realizará el servicio:"
-            fullWidth
-            autoComplete="given-name"
-            
-          />
-        </Grid>
+      <Ciudadeselect
+      ciudad={ciudad}
+      setCiudad={setCiudad}>
+      </Ciudadeselect>
+        
         <Grid item xs={12} sm={12}>
         <Typography variant="body1" gutterBottom>
         Cantidad de horas a solicitar:
