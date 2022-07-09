@@ -8,7 +8,7 @@ import Button from '@mui/material/Button';
 export const DisponibilidadCard = ({dia,inicio,fin,precio}) => {
   return (
       <Paper elevation={3}>
-        <Box alignItems="center"
+        <Box alignItems="center" sx={{ width:'190px'}}
         justifyContent="center"  padding={2}>
         <Typography align="center" variant="subtitle2" gutterBottom>
         Dia: {dia}

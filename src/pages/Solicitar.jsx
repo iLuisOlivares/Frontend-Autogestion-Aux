@@ -114,13 +114,12 @@ export default function Solicitar() {
         <div className="wrapper">
         {
             cartas.map(({dia,inicio,fin,precio})=>(
-          <Box sx={{ m:2,  minWidth: '200' }} >
-          <DisponibilidadCard  dia={dia} isnicio={inicio} fin={fin} precio={precio}/>
+          <Box sx={{ m:2, }} >
+          <DisponibilidadCard  dia={dia} inicio={inicio} fin={fin} precio={precio}/>
           </Box>
 
             ))
           }
-
         </div>
       
         </Grid>
