@@ -27,11 +27,7 @@ function getStepContent(step) {
     case 1:
       return <IdentificacionForm />;
     case 2:
-<<<<<<< HEAD
       return <Estado step={2} />;
-=======
-      return <Estado />;
->>>>>>> main
     default:
       throw new Error('Unknown step');
   }
@@ -69,19 +65,10 @@ export default function App() {
             {activeStep === steps.length ? (
               <React.Fragment>
                 <Typography variant="h5" gutterBottom>
-<<<<<<< HEAD
                   Parte final
                 </Typography>
                 <Typography variant="subtitle1">
                   descripcion
-=======
-                  Thank you for your order.
-                </Typography>
-                <Typography variant="subtitle1">
-                  Your order number is #2001539. We have emailed your order
-                  confirmation, and will send you an update when your order has
-                  shipped.
->>>>>>> main
                 </Typography>
               </React.Fragment>
             ) : (
