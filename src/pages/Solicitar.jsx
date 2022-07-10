@@ -11,6 +11,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { Ciudadeselect } from '../components/Ciudadeselect';
+import { FechaComponent } from '../components/FechaComponent';
 
 const cartas = [
   {
@@ -80,6 +81,7 @@ function valuetext(value) {
 export default function Solicitar() {
   const [ciudad, setCiudad] = React.useState('');
   
+  
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>
@@ -125,7 +127,7 @@ export default function Solicitar() {
         </Grid>
 
         <Grid container justifyContent="center" item xs={12} sm={12}>
-        <Button variant="contained" >Elegir fecha especifíca de servicio</Button>
+        <FechaComponent></FechaComponent>
         </Grid>
        
       </Grid>
