@@ -1,10 +1,46 @@
 import * as React from 'react';
+import "../App.css";
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
+import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
 import { Button } from '@mui/material';
 import { DisponibilidadCard } from '../components/DisponibilidadCard';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import { Ciudadeselect } from '../components/Ciudadeselect';
+
+const cartas = [
+  {
+    dia:'Jueves, 19 de mayo' ,
+    inicio:'07:00 am', 
+    fin: '11:00 am',
+    precio:'62,700',
+
+  },
+  {
+    dia:'Jueves, 19 de mayo' ,
+    inicio:'07:00 am', 
+    fin: '11:00 am',
+    precio:'62,700',
+
+  },
+  {
+    dia:'Jueves, 19 de mayo' ,
+    inicio:'07:00 am', 
+    fin: '11:00 am',
+    precio:'62,700',
+  },
+  {  
+  dia:'Jueves, 19 de mayo' ,
+  inicio:'07:00 am', 
+  fin: '11:00 am',
+  precio:'62,700',
+  }
+]
+
 
 const marks = [
   {
@@ -42,6 +78,7 @@ function valuetext(value) {
   return `${value}`;
 }
 export default function Solicitar() {
+  const [ciudad, setCiudad] = React.useState('');
   
   return (
     <React.Fragment>
@@ -49,21 +86,11 @@ export default function Solicitar() {
         Solicitar servicio
       </Typography>
       <Grid container spacing={3}>
-        <Grid item xs={12} sm={12}>
-        <Typography variant="body1" gutterBottom>
-        Ciudad donde se realizará el servicio:
-      </Typography>
-          <TextField
-            required
-            id="firstName"
-            name="firstName"
-            variant="outlined"
-            label="Ciudad donde se realizará el servicio:"
-            fullWidth
-            autoComplete="given-name"
-            
-          />
-        </Grid>
+      <Ciudadeselect
+      ciudad={ciudad}
+      setCiudad={setCiudad}>
+      </Ciudadeselect>
+        
         <Grid item xs={12} sm={12}>
         <Typography variant="body1" gutterBottom>
         Cantidad de horas a solicitar:
@@ -83,13 +110,17 @@ export default function Solicitar() {
         <Typography variant="body1" gutterBottom>
         Disponibilidad sugerida:
         </Typography>
-        <Grid container  justifyContent="center" alignItems="center"  spacing={3}>
-       
-        <DisponibilidadCard dia={'Jueves, 19 de mayo'} inicio={'7:00 am'} fin={'11:00 am'} precio={'62,700'}/>
-        <DisponibilidadCard  dia={'Jueves, 19 de mayo'}  inicio={'2:00 am'} fin={'6:00 am'} precio={'62,700'}/>
-        <DisponibilidadCard  dia={'Jueves, 20 de mayo'} inicio={'2:00 am'} fin={'6:00 am'} precio={'62,700'}/>  
 
-        </Grid>
+        <div className="wrapper">
+        {
+            cartas.map(({dia,inicio,fin,precio})=>(
+          <Box sx={{ m:2, }} >
+          <DisponibilidadCard  dia={dia} inicio={inicio} fin={fin} precio={precio}/>
+          </Box>
+
+            ))
+          }
+        </div>
       
         </Grid>
 
