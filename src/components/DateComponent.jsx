@@ -29,10 +29,10 @@ export const DateComponent = () => {
     return (
     <div>
       <Button variant="outlined" onClick={handleClickOpen}>
-      Elegir fecha especifíca de servicio
+      Elegir días especifícos de servicio
       </Button> 
       <Dialog  maxWidth={'xl'} open={open} onClose={handleClose}>
-        <DialogTitle>Elegir fechas</DialogTitle>
+        <DialogTitle>Selecciona los días</DialogTitle>
         <DialogContent sx={{p:0}}>
         <Stack spacing={2}>
      
