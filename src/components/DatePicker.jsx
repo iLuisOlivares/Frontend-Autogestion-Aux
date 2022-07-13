@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Calendar } from "react-multi-date-picker"
 import DatePanel from "react-multi-date-picker/plugins/date_panel"
 
@@ -7,6 +7,11 @@ const months = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "
 
 export const DatePickerComponent = ({date,setDate}) => {
 
+    var today = new Date();
+
+    today.setDate(today.getDate() + 2);
+    
+
     const handleChange = (value) =>{
         setDate(value)
     }
@@ -14,12 +19,13 @@ export const DatePickerComponent = ({date,setDate}) => {
     <Calendar 
     value={date}
     multiple
-    plugins={[
-        <DatePanel />
-       ]}
     onChange={handleChange}
     weekDays={weekDays}
     months ={months}
+    minDate={today}
+    plugins={[
+        <DatePanel sort="date" />
+      ]}
     />
     
   )
