@@ -11,6 +11,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { Ciudadeselect } from '../components/Ciudadeselect';
+import { DateComponent } from '../components/DateComponent';
 
 const cartas = [
   {
@@ -125,7 +126,7 @@ export default function Solicitar() {
         </Grid>
 
         <Grid container justifyContent="center" item xs={12} sm={12}>
-        <Button variant="contained" >Elegir fecha especifíca de servicio</Button>
+        <DateComponent/>
         </Grid>
        
       </Grid>
