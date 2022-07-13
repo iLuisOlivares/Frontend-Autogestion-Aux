@@ -9,18 +9,18 @@ export const DatePicker = ({fecha,setFecha}) => {
  
 
   const handleChange = (item) =>{
-    setFecha([item.selection]);
+    setFecha({...fecha,...item});
   }
  
   return (
     <DateRange
-    onChange={handleChange}
     
     showSelectionPreview={true}
     moveRangeOnFirstSelection={false}
     minDate={addDays(new Date(),2)}
     months={2}
-    ranges={fecha}
+    onChange={item => setFecha({ ...fecha, ...item })}
+    ranges={Object.keys(fecha).map(function (key) {return fecha[key];})}
     staticRanges={false}
     direction="vertical"
     ></DateRange>
