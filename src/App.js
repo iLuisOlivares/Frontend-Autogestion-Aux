@@ -16,6 +16,7 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Header } from './components/Header';
 import { Copyright } from './components/Copyright';
+import { TableComponent } from './components/TableComponent';
 
 
 const steps = ['Solicitar', 'Informacion', 'Estado'];
@@ -64,12 +65,7 @@ export default function App() {
           <React.Fragment>
             {activeStep === steps.length ? (
               <React.Fragment>
-                <Typography variant="h5" gutterBottom>
-                  Parte final
-                </Typography>
-                <Typography variant="subtitle1">
-                  descripcion
-                </Typography>
+                <TableComponent></TableComponent>
               </React.Fragment>
             ) : (
               <React.Fragment>
