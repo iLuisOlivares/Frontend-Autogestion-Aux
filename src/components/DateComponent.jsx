@@ -11,7 +11,7 @@ import { DatePickerComponent } from './DatePicker';
 export const DateComponent = () => {
     const [open, setOpen] = React.useState(false);
 
-    const [date, setDate] = React.useState(new Date());
+    const [date, setDate] = React.useState([]);
 
 
     const handleClickOpen = () => {
