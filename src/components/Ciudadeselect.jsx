@@ -38,7 +38,7 @@ export const Ciudadeselect = ({ciudad,setCiudad}) => {
         >
         {
           ciudades.map((ciudad)=>(
-            <MenuItem value={ciudad}>{ciudad}</MenuItem>
+            <MenuItem key={ciudad} value={ciudad}>{ciudad}</MenuItem>
           ))
         }
      

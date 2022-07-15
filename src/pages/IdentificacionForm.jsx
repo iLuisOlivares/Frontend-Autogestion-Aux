@@ -16,8 +16,9 @@ export default function IdentificacionForm() {
       <Grid container spacing={3}>
         {
           textfields.map((item)=>
-          <Grid item xs={12} md={6}>
+          <Grid key={item} item xs={12} md={6}>
           <TextField
+            key = {item}
             required
             id={item}
             label={item}
