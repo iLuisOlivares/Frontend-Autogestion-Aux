@@ -24,7 +24,6 @@ export const DateComponent = () => {
 
     const handleConfirm = () =>{
       setOpen(false);
-      console.log(date);
     }
     return (
     <div>
